@@ -1,0 +1,55 @@
+.hoverline {
+    position: relative;
+}
+
+.hoverline::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: #1363DF;
+    left: 50%;
+    bottom: -10px;
+    transition: all .3s ease-in-out;
+}
+
+.hoverline:hover{
+    cursor: pointer;
+}
+
+.hoverline:hover::after {
+    cursor: pointer;
+    width: 100%;
+    left: 0;
+}
+
+.card-content {
+    border-top-left-radius: 20px;
+    transform: translateY(70px);
+    transition: transform .25s;
+}
+
+.card-content::before {
+    content: '';
+    position: absolute;
+    top: -47px;
+    right: -45px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-175deg);
+    border-radius: 50%;
+    box-shadow: inset 48px 48px #06283D;
+}
+
+.card:hover .card-content {
+    transform: translateY(0);
+}
+
+.card-description {
+    opacity: 0;
+}
+
+.card:hover .card-description {
+    opacity: 1;
+    transition-delay: .25s;
+}
